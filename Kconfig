@@ -1,0 +1,50 @@
+#
+# my device configuration
+#
+
+menu "My devices drivers support"
+
+
+config MYDRIVERS
+	tristate "support all my drivers for exercise!"
+	default n
+	help
+	  Say Y to compile my driver.
+	  Say N not to compile.
+
+	  To compile this drivers as a module, choose M here: the
+	  module will be dynamically loaded into kernel.
+
+if MYDRIVERS
+
+config EX01DRV
+	tristate "first driver"
+	default n
+	help
+	  Say Y enable first driver compile into kernel.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be dynamically loaded into kernel.
+
+
+
+source "drivers/mydrivers/ex01_drv/Kconfig"
+
+
+config EX02DRV
+	tristate "second driver"
+	default n
+	help
+	  Say Y enable first driver compile into kernel.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be dynamically loaded into kernel.
+
+
+
+source "drivers/mydrivers/ex02_drv/Kconfig"
+
+endif
+
+endmenu
+

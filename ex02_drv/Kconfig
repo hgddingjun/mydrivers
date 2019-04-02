@@ -1,0 +1,13 @@
+#
+# My first drivers for study
+#
+
+menu "second Devices"
+
+config EX02DRV
+	tristate "support second driver test"
+	default n
+	---help---
+	This option enables study test second driver.
+
+endmenu
